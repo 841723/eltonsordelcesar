@@ -42,7 +42,7 @@ export const business = {
       provisional: true,
     },
     contactBackground: {
-      src: mediaPath('8938209689938.jpg'),
+      src: mediaPath('9302952389.jpg'),
       alt: '',
       source: '',
       originalUrl: '',
@@ -74,6 +74,13 @@ export const business = {
         src: mediaPath('374589278537029875.jpg'),
         alt: 'Herramientas de barbería dispuestas sobre una mesa de trabajo.',
         source: '',
+        originalUrl: '',
+        provisional: false,
+      },
+      {
+        src: mediaPath('18923854093285.jpg'),
+        alt: 'Barbero de El Tonsor del Cesar con la camiseta de la barbería.',
+        source: 'Fotografía proporcionada por El Tonsor del Cesar',
         originalUrl: '',
         provisional: false,
       },

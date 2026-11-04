@@ -1,15 +1,14 @@
 ---
 import { business } from '../data/business';
 
-const [fade, shave, tools] = business.media.gallery;
+const [fade, shave, tools, barber] = business.media.gallery;
 ---
 
 <section id="trabajo" class="scroll-mt-8 bg-paper py-20 text-ink sm:py-28 lg:py-36">
   <div class="page-gutter">
     <div class="content-width">
-      <div class="mb-10 grid gap-7 border-b border-ink/20 pb-8 sm:mb-14 sm:grid-cols-[0.8fr_1.2fr] sm:items-end sm:pb-10">
+      <div class="mb-10 grid gap-7 border-b border-ink/20 pb-8 sm:mb-14 sm:grid-cols-[1.2fr_0.8fr] sm:items-end sm:pb-10">
         <div>
-          <p class="text-[0.64rem] font-bold uppercase tracking-[0.2em] text-ink/65">Nuestro trabajo</p>
           <h2 class="font-display mt-4 max-w-[20ch] text-[clamp(3rem,6vw,5.5rem)] font-bold uppercase leading-[0.9] tracking-[-0.025em] text-ink [text-wrap:balance]">
             Corte limpio.<br />Estilo propio.
           </h2>
@@ -21,8 +20,8 @@ const [fade, shave, tools] = business.media.gallery;
         </div>
       </div>
 
-      <div class="grid grid-cols-1 gap-4 sm:grid-cols-[1.04fr_0.96fr] sm:gap-5 lg:gap-7">
-        <figure class="group relative min-h-[26rem] overflow-hidden bg-ink-raised sm:row-span-2 sm:min-h-[42rem]">
+      <div class="grid grid-cols-1 gap-4 lg:grid-cols-[1.05fr_0.95fr_1fr] lg:auto-rows-[17rem] lg:gap-7">
+        <figure class="group relative min-h-[28rem] overflow-hidden bg-ink-raised lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:min-h-0">
           <img
             class="absolute inset-0 h-full w-full object-cover object-[center_44%] transition-transform duration-200 ease-out group-hover:scale-[1.02]"
             src={fade.src}
@@ -37,7 +36,7 @@ const [fade, shave, tools] = business.media.gallery;
           </figcaption>
         </figure>
 
-        <figure class="group relative min-h-[18rem] overflow-hidden bg-ink-raised sm:min-h-0">
+        <figure class="group relative min-h-[18rem] overflow-hidden bg-ink-raised lg:col-start-2 lg:row-start-1 lg:min-h-0">
           <img
             class="absolute inset-0 h-full w-full object-cover object-[center_44%] transition-transform duration-200 ease-out group-hover:scale-[1.02]"
             src={shave.src}
@@ -52,7 +51,7 @@ const [fade, shave, tools] = business.media.gallery;
           </figcaption>
         </figure>
 
-        <figure class="group relative min-h-[17rem] overflow-hidden bg-ink-raised sm:min-h-0">
+        <figure class="group relative min-h-[17rem] overflow-hidden bg-ink-raised lg:col-start-2 lg:row-start-2 lg:min-h-0">
           <img
             class="absolute inset-0 h-full w-full object-cover object-[center_56%] transition-transform duration-200 ease-out group-hover:scale-[1.02]"
             src={tools.src}
@@ -66,12 +65,13 @@ const [fade, shave, tools] = business.media.gallery;
             <span class="font-display text-3xl font-semibold uppercase leading-none sm:text-4xl">Herramientas listas</span>
           </figcaption>
         </figure>
+
       </div>
 
       <div class="mt-8 grid overflow-hidden border border-ink/15 sm:mt-12 sm:grid-cols-[1.05fr_0.95fr]">
         <figure class="group relative min-h-[15rem] overflow-hidden bg-ink-raised sm:min-h-[14rem] lg:min-h-[16rem]">
           <img
-            class="absolute inset-0 h-full w-full object-cover object-[center_58%] transition-transform duration-200 ease-out group-hover:scale-[1.02]"
+            class="absolute inset-0 h-full w-full object-cover object-[center_65%] transition-transform duration-200 ease-out group-hover:scale-[1.02]"
             src={business.media.billiards.src}
             alt={business.media.billiards.alt}
             width="1440"
