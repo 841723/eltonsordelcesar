@@ -7,7 +7,7 @@ export type BusinessImage = {
 };
 
 export const business = {
-  // El nombre está confirmado; los datos de contacto siguen pendientes.
+  // Datos de marca, contacto y medios centralizados para facilitar su edición.
   name: 'El Tonsor del Cesar',
   shortName: 'BARBERÍA',
   tagline: 'Cortes con carácter, trato de siempre.',
@@ -18,13 +18,20 @@ export const business = {
   bookingUrl: 'https://eltonsordelcesar.indigosalones.com/eltonsordelcesar',
   mapsUrl: 'https://www.google.com/maps/place/BARBERIA+El+Tonsor+del+C%C3%A9sar./@41.7677193,-0.8228353,816m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd590fe6e2136b1d:0xfb224644131b3a0d!8m2!3d41.7677193!4d-0.8228353!16s%2Fg%2F11sn_3nfl4?entry=ttu&g_ep=EgoyMDI2MTEwMS4wIKXMDSoASAFQAw%3D%3D',
   social: [] as { label: string; url: string }[],
-  mediaNote: 'Fotografía provisional · sustituir por imágenes propias de El Tonsor del Cesar.',
+  mediaNote: 'Fotografías provisionales · sustituir por imágenes propias de El Tonsor del Cesar.',
   media: {
     hero: {
       src: '/media/images/hero.webp',
       alt: '',
       source: 'Unsplash · photo-1622286342621-4bd786c2447c',
       originalUrl: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c',
+      provisional: true,
+    },
+    contactBackground: {
+      src: '/media/images/contact.webp',
+      alt: '',
+      source: 'Unsplash · photo-1672257493626-038f96997ade (František Čaník)',
+      originalUrl: 'https://unsplash.com/photos/a-barber-shop-with-a-brick-wall-and-lots-of-chairs-tX5JNBNSJic',
       provisional: true,
     },
     gallery: [

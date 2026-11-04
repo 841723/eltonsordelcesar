@@ -1,6 +1,6 @@
 schema: design.v1
 name: el-tonsor-del-cesar
-version: 3.0.0
+version: 3.1.0
 status: bootstrap
 updated_at: 2026-11-04
 description: Contrato visual para El Tonsor del Cesar, barbería contemporánea con billar y dardos como amenidades secundarias.
@@ -9,6 +9,7 @@ sources:
   - Inspección del repositorio: sin aplicación, estilos, marcas ni recursos de negocio existentes.
   - Dirección artística confirmada por el usuario el 2026-11-04.
   - Ajuste de marca y jerarquía confirmado por el usuario el 2026-11-04.
+  - Fondo fotográfico para contacto solicitado por el usuario el 2026-11-04.
 
 agent:
   skill: design
@@ -132,7 +133,7 @@ components:
 patterns:
   landing:
     treatment: editorial
-    layout: "Hero con marca y fotografía; trabajo en marfil; amenidades en una mención breve; contacto oscuro y compuesto."
+    layout: "Hero con marca y fotografía; trabajo en marfil; amenidades en una mención breve; contacto sobre foto de interior con overlay oscuro."
     photography: "Una imagen principal y galería asimétrica; todo recurso externo se marca provisional."
 
 policy:

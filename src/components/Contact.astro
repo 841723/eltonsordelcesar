@@ -6,8 +6,19 @@ const bookingTarget = hasBooking && business.bookingUrl.startsWith('http') ? '_b
 const phoneHref = `tel:${business.phone.replace(/[^+\d]/g, '')}`;
 ---
 
-<section id="visitanos" class="scroll-mt-8 bg-ink py-20 text-copy sm:py-28 lg:py-32">
-  <div class="page-gutter">
+<section id="visitanos" class="relative isolate scroll-mt-8 overflow-hidden bg-ink py-20 text-copy sm:py-28 lg:py-32">
+  <img
+    class="absolute inset-0 z-0 h-full w-full object-cover object-[center_52%]"
+    src={business.media.contactBackground.src}
+    alt={business.media.contactBackground.alt}
+    width="1800"
+    height="960"
+    loading="lazy"
+    decoding="async"
+  />
+  <div class="absolute inset-0 z-10 bg-ink/65" aria-hidden="true"></div>
+  <div class="absolute inset-0 z-10 bg-gradient-to-t from-ink/75 via-transparent to-ink/60" aria-hidden="true"></div>
+  <div class="page-gutter relative z-20">
     <div class="content-width">
       <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div>
@@ -34,7 +45,7 @@ const phoneHref = `tel:${business.phone.replace(/[^+\d]/g, '')}`;
           )}
         </div>
 
-        <div class="relative self-end overflow-hidden border border-copy/15 bg-ink-raised p-5 sm:p-8">
+        <div class="relative self-end overflow-hidden border border-copy/20 bg-ink-raised/90 p-5 sm:p-8">
           <div class="absolute inset-x-0 top-0 h-[3px] barber-stripe" aria-hidden="true"></div>
           <div class="mb-6 flex items-center gap-4 border-b border-white-soft/15 pb-6 sm:mb-7 sm:gap-5 sm:pb-7">
             <span class="font-display flex size-14 shrink-0 items-center justify-center border border-tonsor-orange/55 text-xl font-bold text-tonsor-orange sm:size-16 sm:text-2xl" aria-hidden="true">ETC</span>
