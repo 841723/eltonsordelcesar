@@ -1,0 +1,58 @@
+---
+import { business, hasBooking } from '../data/business';
+
+const bookingHref = hasBooking ? business.bookingUrl : '#visitanos';
+const bookingTarget = hasBooking && business.bookingUrl.startsWith('http') ? '_blank' : undefined;
+---
+
+<section id="inicio" class="relative isolate flex min-h-[min(850px,100svh)] items-end overflow-hidden bg-ink pb-16 pt-36 sm:pb-20 md:pb-24">
+  <img
+    class="absolute inset-0 -z-20 h-full w-full object-cover object-[center_43%]"
+    src={business.media.hero.src}
+    alt={business.media.hero.alt}
+    width="1800"
+    height="1200"
+    fetchpriority="high"
+    decoding="async"
+  />
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink/95 via-ink/70 to-ink/20"></div>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink/75 via-transparent to-ink/35"></div>
+
+  <div class="page-gutter w-full">
+    <div class="content-width">
+      <div class="max-w-[52rem]">
+        <p class="mb-5 flex items-center gap-3 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-white-soft/85 sm:mb-7">
+          <span class="barber-stripe h-[3px] w-10" aria-hidden="true"></span>
+          {business.shortName} · Cortes · Estilo
+        </p>
+        <h1 class="font-display max-w-[10ch] text-[clamp(3.75rem,10vw,9rem)] font-bold uppercase leading-[0.79] tracking-[-0.035em] text-paper [text-wrap:balance]">
+          {business.name}
+        </h1>
+        <p class="mt-7 max-w-[29rem] text-sm leading-7 text-white-soft/85 sm:mt-9 sm:text-base sm:leading-8">
+          {business.description}
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-x-7 gap-y-3 sm:mt-10">
+          <a
+            class="inline-flex min-h-12 items-center justify-center gap-4 bg-tonsor-orange px-6 text-[0.68rem] font-bold uppercase tracking-[0.15em] text-ink transition-colors duration-150 hover:bg-paper"
+            href={bookingHref}
+            target={bookingTarget}
+            rel={bookingTarget ? 'noreferrer' : undefined}
+          >
+            Reservar cita
+            <span aria-hidden="true" class="text-base leading-none">↗</span>
+          </a>
+          <a class="group inline-flex min-h-12 items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.15em] text-white-soft/90 transition-colors duration-150 hover:text-tonsor-orange" href="#trabajo">
+            Ver el trabajo
+            <span aria-hidden="true" class="transition-transform duration-150 group-hover:translate-y-1">↓</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-14 flex items-center justify-between border-t border-white-soft/25 pt-4 text-[0.58rem] font-semibold uppercase tracking-[0.17em] text-white-soft/65 sm:mt-20">
+        <span>Detalle, técnica y tiempo.</span>
+        <span class="hidden sm:inline">Desliza para descubrir <span class="ml-2 text-paper" aria-hidden="true">↓</span></span>
+        <span class="sm:hidden">Scroll para descubrir <span class="ml-1 text-paper" aria-hidden="true">↓</span></span>
+      </div>
+    </div>
+  </div>
+</section>

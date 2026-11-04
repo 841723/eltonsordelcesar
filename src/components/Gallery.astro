@@ -1,0 +1,80 @@
+---
+import { business } from '../data/business';
+
+const [fade, shave, tools] = business.media.gallery;
+---
+
+<section id="trabajo" class="scroll-mt-8 bg-paper py-20 text-ink sm:py-28 lg:py-36">
+  <div class="page-gutter">
+    <div class="content-width">
+      <div class="mb-10 grid gap-7 border-b border-ink/20 pb-8 sm:mb-14 sm:grid-cols-[0.8fr_1.2fr] sm:items-end sm:pb-10">
+        <div>
+          <p class="text-[0.64rem] font-bold uppercase tracking-[0.2em] text-ink/65">01 / Nuestro trabajo</p>
+          <h2 class="font-display mt-4 max-w-[14ch] text-[clamp(3.5rem,7vw,6.5rem)] font-bold uppercase leading-[0.82] tracking-[-0.035em] text-ink [text-wrap:balance]">
+            Corte limpio.<br />Estilo propio.
+          </h2>
+        </div>
+        <div class="sm:justify-self-end sm:pb-1 sm:text-right">
+          <p class="max-w-[28rem] text-sm leading-7 text-ink/75 sm:text-base">
+            Degradados limpios, barba al detalle y el estilo que va contigo.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-[1.04fr_0.96fr] sm:gap-5 lg:gap-7">
+        <figure class="group relative min-h-[26rem] overflow-hidden bg-ink-raised sm:row-span-2 sm:min-h-[42rem]">
+          <img
+            class="absolute inset-0 h-full w-full object-cover object-[center_44%] transition-transform duration-200 ease-out group-hover:scale-[1.02]"
+            src={fade.src}
+            alt={fade.alt}
+            width="1200"
+            height="1798"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-ink/80 to-transparent p-5 pt-16 text-white-soft sm:p-7 sm:pt-20">
+            <span class="font-display text-3xl font-semibold uppercase leading-none sm:text-4xl">Corte al detalle</span>
+            <span class="hidden text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-white-soft/75 sm:block">01 / 03</span>
+          </figcaption>
+        </figure>
+
+        <figure class="group relative min-h-[18rem] overflow-hidden bg-ink-raised sm:min-h-0">
+          <img
+            class="absolute inset-0 h-full w-full object-cover object-[center_44%] transition-transform duration-200 ease-out group-hover:scale-[1.02]"
+            src={shave.src}
+            alt={shave.alt}
+            width="1200"
+            height="800"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 to-transparent p-5 pt-14 text-white-soft sm:p-6 sm:pt-16">
+            <span class="font-display text-3xl font-semibold uppercase leading-none sm:text-4xl">Barba al punto</span>
+          </figcaption>
+        </figure>
+
+        <figure class="group relative min-h-[17rem] overflow-hidden bg-ink-raised sm:min-h-0">
+          <img
+            class="absolute inset-0 h-full w-full object-cover object-[center_56%] transition-transform duration-200 ease-out group-hover:scale-[1.02]"
+            src={tools.src}
+            alt={tools.alt}
+            width="1800"
+            height="1200"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-ink/80 to-transparent p-5 pt-14 text-white-soft sm:p-6 sm:pt-16">
+            <span class="font-display text-3xl font-semibold uppercase leading-none sm:text-4xl">Herramientas listas</span>
+            <span class="hidden text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-white-soft/75 sm:block">03 / 03</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="mt-5 text-[0.62rem] font-medium uppercase tracking-[0.12em] text-ink/55">{business.mediaNote}</p>
+      <p class="mt-8 flex items-center gap-3 border-l-2 border-amenity-green pl-4 text-sm leading-6 text-ink/75 sm:ml-auto sm:max-w-[34rem] sm:text-right">
+        <span class="size-2 shrink-0 rounded-full bg-amenity-green sm:order-2" aria-hidden="true"></span>
+        <span>{business.amenityNote}</span>
+      </p>
+    </div>
+  </div>
+</section>
