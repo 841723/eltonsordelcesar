@@ -6,6 +6,11 @@ export type BusinessImage = {
   provisional: true;
 };
 
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const mediaPath = (file: string) => `${baseUrl}media/images/${file}`;
+
 export const business = {
   // Datos de marca, contacto y medios centralizados para facilitar su edición.
   name: 'El Tonsor del Cesar',
@@ -21,14 +26,14 @@ export const business = {
   mediaNote: 'Fotografías provisionales · sustituir por imágenes propias de El Tonsor del Cesar.',
   media: {
     hero: {
-      src: '/media/images/hero.webp',
+      src: mediaPath('hero.webp'),
       alt: '',
       source: 'Unsplash · photo-1622286342621-4bd786c2447c',
       originalUrl: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c',
       provisional: true,
     },
     contactBackground: {
-      src: '/media/images/contact.webp',
+      src: mediaPath('contact.webp'),
       alt: '',
       source: 'Unsplash · photo-1672257493626-038f96997ade (František Čaník)',
       originalUrl: 'https://unsplash.com/photos/a-barber-shop-with-a-brick-wall-and-lots-of-chairs-tX5JNBNSJic',
@@ -36,21 +41,21 @@ export const business = {
     },
     gallery: [
       {
-        src: '/media/images/fade.webp',
+        src: mediaPath('fade.webp'),
         alt: 'Detalle de un corte degradado realizado con precisión.',
         source: 'Unsplash · photo-1599351431202-1e0f0137899a',
         originalUrl: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a',
         provisional: true,
       },
       {
-        src: '/media/images/shave.webp',
+        src: mediaPath('shave.webp'),
         alt: 'Arreglo de barba con tijera durante un servicio de barbería.',
         source: 'Unsplash · photo-1503951914875-452162b0f3f1',
         originalUrl: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1',
         provisional: true,
       },
       {
-        src: '/media/images/tools.webp',
+        src: mediaPath('tools.webp'),
         alt: 'Herramientas de barbería dispuestas sobre una mesa de trabajo.',
         source: 'Unsplash · photo-1621605815971-fbc98d665033',
         originalUrl: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033',

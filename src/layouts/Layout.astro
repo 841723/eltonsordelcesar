@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { business } from '../data/business';
 
 interface Props {
   title?: string;
@@ -21,7 +22,7 @@ const { title = 'El Tonsor del Cesar · Barbería' } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="preload" as="image" href="/media/images/hero.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href={business.media.hero.src} fetchpriority="high" />
   </head>
   <body>
     <slot />
