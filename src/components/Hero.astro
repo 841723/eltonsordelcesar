@@ -21,13 +21,16 @@ const bookingTarget = hasBooking && business.bookingUrl.startsWith('http') ? '_b
   <div class="page-gutter w-full">
     <div class="content-width">
       <div class="max-w-[52rem]">
-        <p class="font-display mb-5 flex items-center gap-3 text-[1.2rem] font-bold uppercase tracking-[0.2em] text-white-soft/85 sm:mb-7">
+        <p class="font-sans mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.1em] text-white-soft/85 sm:mb-7 sm:text-sm">
           <span class="barber-stripe h-[3px] w-10" aria-hidden="true"></span>
           {business.shortName} en {business.location}
         </p>
         <h1 class="font-display max-w-[20ch] text-[clamp(3.5rem,8vw,7rem)] font-bold uppercase leading-[0.88] tracking-[-0.025em] text-paper [text-wrap:balance]">
           {business.name}
         </h1>
+        <p class="font-sans mt-4 max-w-[34ch] text-sm leading-6 text-white-soft/85 sm:text-base">
+          {business.tagline}
+        </p>
         <a
           class="mt-8 inline-flex min-h-12 items-center justify-center gap-4 bg-tonsor-orange px-6 font-sans text-[0.68rem] font-bold uppercase tracking-[0.15em] text-ink transition-colors duration-150 hover:bg-paper sm:mt-10"
           href={bookingHref}

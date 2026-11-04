@@ -1,8 +1,8 @@
 schema: design.v1
 name: el-tonsor-del-cesar
-version: 4.3.0
+version: 4.5.0
 status: bootstrap
-updated_at: 2026-11-04
+updated_at: 2026-11-05
 description: Contrato visual para El Tonsor del Cesar, barbería contemporánea con billar y dardos como amenidades secundarias.
 sources:
   - prompt.md
@@ -13,7 +13,8 @@ sources:
   - Fotografía de billar proporcionada por el negocio añadida como detalle secundario.
   - Hero reducido a marca, ubicación y reserva; bloque de billar replanteado.
   - Logotipos blanco/negro y fuentes Optimus Princeps suministrados por el usuario; Manrope local para interfaz.
-  - Retrato vertical proporcionado por el negocio añadido a la galería.
+  - Galería reorganizada en tres imágenes, con billar integrado en la composición.
+  - Galería de tres imágenes de barbería y sección independiente de billar/dardos solicitadas por el usuario.
 
 agent:
   skill: design
@@ -144,8 +145,8 @@ components:
 patterns:
   landing:
     treatment: editorial
-    layout: "Hero mínimo con marca, localidad y reserva; trabajo en marfil; billar/dardos en un bloque secundario; contacto sobre foto de interior con overlay oscuro."
-    photography: "Galería asimétrica de cortes y retrato vertical del barbero; la foto del billar se mantiene secundaria."
+    layout: "Hero mínimo con marca, localidad, reserva y una frase; galería asimétrica de tres imágenes de barbería; sección de billar/dardos con foto propia debajo de la galería; contacto sobre foto de interior con overlay oscuro."
+    photography: "Retrato del barbero, detalle de corte y herramientas en la galería; fotografía del billar en su propia sección secundaria."
 
 policy:
   if_missing: invent_with_note
@@ -155,6 +156,7 @@ constraints:
   always:
     - "La barbería y el nombre El Tonsor del Cesar son la jerarquía principal."
     - "El hero muestra solo la marca, la barbería y localidad, y la acción de reservar."
+    - "La galería contiene exactamente tres imágenes de barbería; billar y dardos aparecen en una sección independiente debajo, con una imagen."
     - "El billar y los dardos se mencionan como detalles secundarios del ambiente."
     - "Usar carbón azulado y marfil como superficies principales; naranja para acciones y verde solo como detalle."
     - "Rayas de identidad únicamente en orden rojo, blanco, azul y con presencia contenida."
