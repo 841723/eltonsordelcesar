@@ -22,8 +22,8 @@ const phoneHref = `tel:${business.phone.replace(/[^+\d]/g, '')}`;
     <div class="content-width">
       <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div>
-          <p class="text-[0.64rem] font-bold uppercase tracking-[0.2em] text-muted">02 / Ven a conocernos</p>
-          <h2 class="font-display mt-5 max-w-[10ch] text-[clamp(3.5rem,7vw,6.5rem)] font-bold uppercase leading-[0.82] tracking-[-0.035em] text-paper [text-wrap:balance]">
+          <p class="text-[0.64rem] font-bold uppercase tracking-[0.2em] text-muted">Ven a conocernos</p>
+          <h2 class="font-display mt-5 max-w-[14ch] text-[clamp(3.2rem,6vw,5.5rem)] font-bold uppercase leading-[0.9] tracking-[-0.025em] text-paper [text-wrap:balance]">
             Nos vemos<br />en la silla.
           </h2>
           <p class="mt-6 max-w-[25rem] text-sm leading-7 text-white-soft/70 sm:text-base">
@@ -31,7 +31,7 @@ const phoneHref = `tel:${business.phone.replace(/[^+\d]/g, '')}`;
           </p>
           {hasBooking || hasPhone ? (
             <a
-              class="mt-8 inline-flex min-h-12 items-center justify-center gap-4 bg-tonsor-orange px-6 text-[0.68rem] font-bold uppercase tracking-[0.15em] text-ink transition-colors duration-150 hover:bg-paper"
+              class="mt-8 inline-flex min-h-12 items-center justify-center gap-4 bg-tonsor-orange px-6 font-sans text-[0.68rem] font-bold uppercase tracking-[0.15em] text-ink transition-colors duration-150 hover:bg-paper"
               href={bookingHref}
               target={bookingTarget}
               rel={bookingTarget ? 'noreferrer' : undefined}
@@ -39,7 +39,7 @@ const phoneHref = `tel:${business.phone.replace(/[^+\d]/g, '')}`;
               Reservar cita <span aria-hidden="true">↗</span>
             </a>
           ) : (
-            <span class="mt-8 inline-flex min-h-12 items-center border border-white-soft/25 px-6 text-[0.68rem] font-bold uppercase tracking-[0.15em] text-muted" role="status">
+            <span class="mt-8 inline-flex min-h-12 items-center border border-white-soft/25 px-6 font-sans text-[0.68rem] font-bold uppercase tracking-[0.15em] text-muted" role="status">
               Reservas pendientes de activar
             </span>
           )}
@@ -48,30 +48,44 @@ const phoneHref = `tel:${business.phone.replace(/[^+\d]/g, '')}`;
         <div class="relative self-end overflow-hidden border border-copy/20 bg-ink-raised/90 p-5 sm:p-8">
           <div class="absolute inset-x-0 top-0 h-[3px] barber-stripe" aria-hidden="true"></div>
           <div class="mb-6 flex items-center gap-4 border-b border-white-soft/15 pb-6 sm:mb-7 sm:gap-5 sm:pb-7">
-            <span class="font-display flex size-14 shrink-0 items-center justify-center border border-tonsor-orange/55 text-xl font-bold text-tonsor-orange sm:size-16 sm:text-2xl" aria-hidden="true">ETC</span>
+            <img
+              class="block h-16 w-[5.25rem] shrink-0 object-contain sm:h-[4.5rem] sm:w-24"
+              src={business.logos.onDark}
+              alt={business.name}
+              width="829"
+              height="654"
+            />
             <div>
               <p class="text-[0.58rem] font-bold uppercase tracking-[0.18em] text-muted">{business.shortName}</p>
-              <h3 class="font-display mt-1 text-3xl font-bold uppercase leading-none text-paper sm:text-4xl">{business.name}</h3>
+              <h3 class="font-display mt-1 font-sans text-base font-bold uppercase leading-tight text-paper sm:text-lg">{business.name}</h3>
             </div>
           </div>
           <dl class="divide-y divide-white-soft/15">
             <div class="grid grid-cols-[2rem_5.5rem_1fr] items-center gap-2 py-4 sm:grid-cols-[2.5rem_7rem_1fr] sm:gap-3 sm:py-5">
-              <span class="font-display text-lg font-bold text-tonsor-orange" aria-hidden="true">01</span>
-              <dt class="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-muted">Dirección</dt>
+              <svg class="size-5 text-tonsor-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" />
+                <circle cx="12" cy="10" r="2.2" />
+              </svg>
+              <dt class="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-muted ">Dirección</dt>
               <dd class="text-sm leading-6 text-white-soft">
                 {hasAddress ? business.address : <span class="text-muted">C. Hermanos Buisán, 12, 50830 Villanueva de Gállego, Zaragoza</span>}
                 {business.mapsUrl && hasAddress && <a class="ml-3 inline-flex min-h-11 items-center text-xs font-bold uppercase tracking-[0.12em] text-paper underline underline-offset-4" href={business.mapsUrl} target="_blank" rel="noreferrer">Abrir mapa <span aria-hidden="true" class="ml-2">↗</span></a>}
               </dd>
             </div>
             <div class="grid grid-cols-[2rem_5.5rem_1fr] items-center gap-2 py-4 sm:grid-cols-[2.5rem_7rem_1fr] sm:gap-3 sm:py-5">
-              <span class="font-display text-lg font-bold text-tonsor-orange" aria-hidden="true">02</span>
+              <svg class="size-5 text-tonsor-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7.2 4.2H5.6c-.9 0-1.6.7-1.6 1.6v1.6c0 6.9 5.6 12.5 12.5 12.5h1.6c.9 0 1.6-.7 1.6-1.6v-1.6l-4-1.7-1.7 2.1a13 13 0 0 1-5.6-5.6l2.1-1.7-1.7-4Z" />
+              </svg>
               <dt class="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-muted">Teléfono</dt>
               <dd class="text-sm leading-6 text-white-soft">
                 {hasPhone ? <a class="inline-flex min-h-11 items-center underline decoration-white-soft/35 underline-offset-4 transition-colors hover:text-paper" href={phoneHref}>{business.phone}</a> : <span class="text-muted"></span>}
               </dd>
             </div>
             <div class="grid grid-cols-[2rem_5.5rem_1fr] items-center gap-2 py-4 sm:grid-cols-[2.5rem_7rem_1fr] sm:gap-3 sm:py-5">
-              <span class="font-display text-lg font-bold text-tonsor-orange" aria-hidden="true">03</span>
+              <svg class="size-5 text-tonsor-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="4" y="5.5" width="16" height="15" rx="1.5" />
+                <path d="M8 3.5v4M16 3.5v4M4 10h16M8 14h2M14 14h2M8 17h2" />
+              </svg>
               <dt class="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-muted">Reservas</dt>
               <dd class="text-sm leading-6 text-white-soft">
                 {hasBooking ? <a class="inline-flex min-h-11 items-center underline decoration-white-soft/35 underline-offset-4 transition-colors hover:text-paper" href={business.bookingUrl} target={bookingTarget} rel={bookingTarget ? 'noreferrer' : undefined}>Reservar una cita <span aria-hidden="true" class="ml-2">↗</span></a> : <span class="text-muted">Enlace pendiente de configurar</span>}

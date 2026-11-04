@@ -9,8 +9,8 @@ const [fade, shave, tools] = business.media.gallery;
     <div class="content-width">
       <div class="mb-10 grid gap-7 border-b border-ink/20 pb-8 sm:mb-14 sm:grid-cols-[0.8fr_1.2fr] sm:items-end sm:pb-10">
         <div>
-          <p class="text-[0.64rem] font-bold uppercase tracking-[0.2em] text-ink/65">01 / Nuestro trabajo</p>
-          <h2 class="font-display mt-4 max-w-[14ch] text-[clamp(3.5rem,7vw,6.5rem)] font-bold uppercase leading-[0.82] tracking-[-0.035em] text-ink [text-wrap:balance]">
+          <p class="text-[0.64rem] font-bold uppercase tracking-[0.2em] text-ink/65">Nuestro trabajo</p>
+          <h2 class="font-display mt-4 max-w-[20ch] text-[clamp(3rem,6vw,5.5rem)] font-bold uppercase leading-[0.9] tracking-[-0.025em] text-ink [text-wrap:balance]">
             Corte limpio.<br />Estilo propio.
           </h2>
         </div>
@@ -34,7 +34,6 @@ const [fade, shave, tools] = business.media.gallery;
           />
           <figcaption class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-ink/80 to-transparent p-5 pt-16 text-white-soft sm:p-7 sm:pt-20">
             <span class="font-display text-3xl font-semibold uppercase leading-none sm:text-4xl">Corte al detalle</span>
-            <span class="hidden text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-white-soft/75 sm:block">01 / 03</span>
           </figcaption>
         </figure>
 
@@ -65,16 +64,30 @@ const [fade, shave, tools] = business.media.gallery;
           />
           <figcaption class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-ink/80 to-transparent p-5 pt-14 text-white-soft sm:p-6 sm:pt-16">
             <span class="font-display text-3xl font-semibold uppercase leading-none sm:text-4xl">Herramientas listas</span>
-            <span class="hidden text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-white-soft/75 sm:block">03 / 03</span>
           </figcaption>
         </figure>
       </div>
 
-      <p class="mt-5 text-[0.62rem] font-medium uppercase tracking-[0.12em] text-ink/55">{business.mediaNote}</p>
-      <p class="mt-8 flex items-center gap-3 border-l-2 border-amenity-green pl-4 text-sm leading-6 text-ink/75 sm:ml-auto sm:max-w-[34rem] sm:text-right">
-        <span class="size-2 shrink-0 rounded-full bg-amenity-green sm:order-2" aria-hidden="true"></span>
-        <span>{business.amenityNote}</span>
-      </p>
+      <div class="mt-8 grid overflow-hidden border border-ink/15 sm:mt-12 sm:grid-cols-[1.05fr_0.95fr]">
+        <figure class="group relative min-h-[15rem] overflow-hidden bg-ink-raised sm:min-h-[14rem] lg:min-h-[16rem]">
+          <img
+            class="absolute inset-0 h-full w-full object-cover object-[center_58%] transition-transform duration-200 ease-out group-hover:scale-[1.02]"
+            src={business.media.billiards.src}
+            alt={business.media.billiards.alt}
+            width="1440"
+            height="1440"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/75 to-transparent p-4 pt-12 font-display text-2xl font-semibold uppercase text-white-soft">
+            Billar
+          </figcaption>
+        </figure>
+        <div class="flex flex-col justify-center gap-3 bg-ink p-6 text-white-soft sm:p-8">
+          <h3 class="font-display text-3xl font-bold uppercase leading-[0.9] sm:text-4xl">Un rato más.</h3>
+          <p class="max-w-[28ch] text-sm leading-6 text-white-soft/75">{business.amenityNote}</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

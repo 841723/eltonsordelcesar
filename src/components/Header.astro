@@ -9,21 +9,17 @@ const bookingTarget = hasBooking && business.bookingUrl.startsWith('http') ? '_b
   <div class="content-width">
     <div class="flex min-h-12 items-center justify-between gap-5">
       <a href="#inicio" class="group inline-flex min-h-11 items-center gap-3" aria-label={`${business.name}, inicio`}>
-        <span class="font-display text-[1.7rem] font-bold leading-none text-tonsor-orange" aria-hidden="true">ETC</span>
-        <span class="max-w-[9rem] text-[0.56rem] font-semibold uppercase leading-tight tracking-[0.14em] text-white-soft/75 sm:max-w-none sm:text-[0.62rem] sm:tracking-[0.2em]">
-          {business.name}<br />
-          <span class="hidden font-normal tracking-[0.09em] text-white-soft/55 sm:inline">{business.shortName} · El buen oficio</span>
-        </span>
+        <img
+          class="block h-12 w-[3.8rem] object-contain transition-opacity duration-150 group-hover:opacity-80 sm:h-14 sm:w-[4.5rem]"
+          src={business.logos.onDark}
+          alt={business.name}
+          width="829"
+          height="654"
+        />
       </a>
 
-      <nav class="hidden items-center gap-8 text-[0.68rem] font-semibold uppercase tracking-[0.17em] text-white-soft/80 md:flex" aria-label="Navegación principal">
-        <a class="min-h-11 py-3 transition-colors duration-150 hover:text-paper" href="#inicio">Inicio</a>
-        <a class="min-h-11 py-3 transition-colors duration-150 hover:text-paper" href="#trabajo">El trabajo</a>
-        <a class="min-h-11 py-3 transition-colors duration-150 hover:text-tonsor-orange" href="#visitanos">Contacto</a>
-      </nav>
-
       <a
-        class="inline-flex min-h-11 items-center justify-center border border-tonsor-orange/75 px-4 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-tonsor-orange transition-colors duration-150 hover:bg-tonsor-orange hover:text-ink sm:px-5"
+        class="inline-flex min-h-11 items-center justify-center border border-tonsor-orange/75 px-4 font-sans text-[0.65rem] font-bold uppercase tracking-[0.14em] text-tonsor-orange transition-colors duration-150 hover:bg-tonsor-orange hover:text-ink sm:px-5"
         href={bookingHref}
         target={bookingTarget}
         rel={bookingTarget ? 'noreferrer' : undefined}
@@ -32,10 +28,5 @@ const bookingTarget = hasBooking && business.bookingUrl.startsWith('http') ? '_b
       </a>
     </div>
 
-    <nav class="mt-3 flex min-h-11 items-center justify-between border-t border-white-soft/15 text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-white-soft/75 md:hidden" aria-label="Navegación móvil">
-      <a class="flex min-h-11 items-center pr-3" href="#inicio">Inicio</a>
-      <a class="flex min-h-11 items-center px-2" href="#trabajo">El trabajo</a>
-      <a class="flex min-h-11 items-center pl-2" href="#visitanos">Visítanos</a>
-    </nav>
   </div>
 </header>

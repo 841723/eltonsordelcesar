@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { business } from '../data/business';
+import { business, publicAssetPath } from '../data/business';
 
 interface Props {
   title?: string;
@@ -16,12 +16,9 @@ const { title = 'El Tonsor del Cesar · Barbería' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#211f1c" />
     <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="icon" type="image/svg+xml" href={business.favicon.onLight} />
+    <link rel="icon" type="image/svg+xml" href={business.favicon.onDark} media="(prefers-color-scheme: dark)" />
+    <link rel="apple-touch-icon" sizes="180x180" href={publicAssetPath('apple-touch-icon.png')} />
     <link rel="preload" as="image" href={business.media.hero.src} fetchpriority="high" />
   </head>
   <body>

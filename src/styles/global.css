@@ -1,5 +1,29 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'Optimus Princeps';
+  src: url('../../fonts/OptimusPrinceps.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Optimus Princeps';
+  src: url('../../fonts/OptimusPrincepsSemiBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('../../fonts/Manrope-Latin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+}
+
 @theme inline {
   --color-ink: var(--ink);
   --color-ink-raised: var(--ink-raised);
@@ -13,7 +37,7 @@
   --color-copy: var(--copy);
   --color-muted: var(--muted);
   --color-ink-copy: var(--ink-copy);
-  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-display: 'Optimus Princeps', Georgia, serif;
   --font-sans: 'Manrope', Arial, sans-serif;
 }
 
@@ -72,8 +96,7 @@ a {
 }
 
 .font-display {
-  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-  font-stretch: condensed;
+  font-family: 'Optimus Princeps', Georgia, serif;
 }
 
 .barber-stripe {

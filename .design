@@ -1,6 +1,6 @@
 schema: design.v1
 name: el-tonsor-del-cesar
-version: 3.1.0
+version: 4.2.0
 status: bootstrap
 updated_at: 2026-11-04
 description: Contrato visual para El Tonsor del Cesar, barbería contemporánea con billar y dardos como amenidades secundarias.
@@ -10,6 +10,9 @@ sources:
   - Dirección artística confirmada por el usuario el 2026-11-04.
   - Ajuste de marca y jerarquía confirmado por el usuario el 2026-11-04.
   - Fondo fotográfico para contacto solicitado por el usuario el 2026-11-04.
+  - Fotografía de billar proporcionada por el negocio añadida como detalle secundario.
+  - Hero reducido a marca, ubicación y reserva; bloque de billar replanteado.
+  - Logotipos blanco/negro y fuentes Optimus Princeps suministrados por el usuario; Manrope local para interfaz.
 
 agent:
   skill: design
@@ -24,11 +27,12 @@ overview: |
   El Tonsor del Cesar es, ante todo, una barbería: cortes con oficio, trato cercano y carácter contemporáneo.
   El billar y los dardos aportan un matiz al ambiente, sin competir con el corte ni convertir el negocio en un club.
   El carbón azulado, marfil y naranja cálido sostienen la marca; el verde y las rayas barber pole son detalles.
+  La firma gráfica utiliza los logotipos originales del negocio y Optimus Princeps.
 
 intent:
   reference: "Una barbería de oficio actual: gráfica contundente, materiales oscuros y acentos cálidos."
   direction: contemporary-barbershop
-  signature: "El nombre El Tonsor del Cesar, tipografía condensada y una raya barber pole mínima."
+  signature: "Los logotipos originales de El Tonsor del Cesar y la tipografía Optimus Princeps."
   treatment: editorial
   density: comfortable
   trust: high
@@ -63,9 +67,9 @@ tokens:
     control: 0
   typography:
     display:
-      fontFamily: Barlow Condensed
-      fontSize: 80
-      fontWeight: 700
+      fontFamily: Optimus Princeps
+      fontSize: 112
+      fontWeight: 600
     body:
       fontFamily: Manrope
       fontSize: 16
@@ -73,7 +77,7 @@ tokens:
     utility:
       fontFamily: Manrope
       fontSize: 12
-      fontWeight: 700
+      fontWeight: 600
   layout:
     contentMax: 1440
     breakpoint: 768
@@ -129,12 +133,18 @@ components:
       textColor: "{tokens.color.text}"
       borderColor: "{tokens.color.text}"
       rounded: "{tokens.radius.control}"
+  brand-mark:
+    when: [identificación visual de El Tonsor del Cesar]
+    when_not: [recrear la marca con iniciales o iconos separados]
+    tokens:
+      image: "business.logos.onDark / business.logos.onLight"
+      size: "logo responsivo, respetar su proporción original"
 
 patterns:
   landing:
     treatment: editorial
-    layout: "Hero con marca y fotografía; trabajo en marfil; amenidades en una mención breve; contacto sobre foto de interior con overlay oscuro."
-    photography: "Una imagen principal y galería asimétrica; todo recurso externo se marca provisional."
+    layout: "Hero mínimo con marca, localidad y reserva; trabajo en marfil; billar/dardos en un bloque secundario; contacto sobre foto de interior con overlay oscuro."
+    photography: "Galería asimétrica de cortes y una foto pequeña del billar; los recursos provisionales se identifican."
 
 policy:
   if_missing: invent_with_note
@@ -143,6 +153,7 @@ policy:
 constraints:
   always:
     - "La barbería y el nombre El Tonsor del Cesar son la jerarquía principal."
+    - "El hero muestra solo la marca, la barbería y localidad, y la acción de reservar."
     - "El billar y los dardos se mencionan como detalles secundarios del ambiente."
     - "Usar carbón azulado y marfil como superficies principales; naranja para acciones y verde solo como detalle."
     - "Rayas de identidad únicamente en orden rojo, blanco, azul y con presencia contenida."
